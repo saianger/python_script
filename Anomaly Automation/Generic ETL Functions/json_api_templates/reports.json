@@ -1,0 +1,24 @@
+{
+        "reportScope":{
+          "agencyId":"{{agencyId}}",
+          "advertiserId":"{{advertiserId}}"},
+        "reportType":"{{reportType}}",
+        "columns": [
+          {% for column in columns %}
+            {% if columns.index(column) == columns|length - 1 %}
+              { "columnName": "{{ column }}" }
+            {% else %}
+              { "columnName": "{{ column }}" },
+            {% endif%}
+          {% endfor %}
+         ],
+        "timeRange" : {
+            "startDate" : "{{startDate}}",
+            "endDate" : "{{endDate}}"
+          },
+        "downloadFormat": "csv",
+        "statisticsCurrency": "usd",
+        "maxRowsPerFile": 6000000,
+        "verifySingleTimeZone": "false",
+        "includeRemovedEntities": "false"
+}

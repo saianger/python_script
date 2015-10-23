@@ -1,0 +1,36 @@
+{
+  "MaxError": 3,
+  "HttpRetry": 5,
+  "client_secrets": "client_secret_47234910213-d468k44v10lljoealk7mf6k2cv2k5p3f.apps.googleusercontent.com.json",
+  "token_file_name": "client_secret_Webmasters_API.dat",
+  "api": {"webmasters": "v3"},
+  "scope": "https://www.googleapis.com/auth/webmasters.readonly",
+  "metrics_list": [{"impressions": "INTEGER"},{"clicks": "INTEGER"},{"ctr": "FLOAT"},{"position": "INTEGER"}],
+  "dimensions_list": ["date","page","device","country","query"],
+  "columns_prefix": ["client"],
+  "MaxRows": 5000,
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "webmaster_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com","redshift-anom-production.cbyjbvcdzoqz.us-east-1.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["mbau-syd-cadreon","anomaly.com.au"],
+    "s3-path": "/data-processing/Reprise/Webmasters_API/"
+  },
+  "Files": ["Webmaster_Daily_Metrics"],
+  "Tables": ["webmaster_daily_metrics"],
+  "SkipClients": ["http://www.magshop.co.nz/","http://www.goodlifehealthclubs.com.au/"],
+  "Validation": ["siteFullUser","siteRestrictedUser"],
+  "Unverified": "Unverified.json"
+}

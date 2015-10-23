@@ -1,0 +1,64 @@
+{
+  "MaxError": 3,
+  "my_app_id": "1073086146041457",
+  "my_app_secret": "d2ec49d700130270f6dcd75e98cc59fd",
+  "my_access_token": "CAAPP91aMVnEBAI6rwl1gURBH8s3QYRe1gnzntDrkUB9qzkvyZCgQpIdEqius9Nlg1a32SAQ3rp4ll5RSpwLuGWWWhNCZC2KjRcUWOZBU7iSc46dvmA8kIucSZB4SDpsYRqD2mPLnVJuT6TKEZC8SMkXwMepaWJGCpXw0rv2HZCtzOZBuPwx8p6YZBxYpYimlzJgZD",
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com","redshift-anom-production.cbyjbvcdzoqz.us-east-1.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["mbau-syd-cadreon","anomaly.com.au"]
+  },
+  "params_actions":
+  {
+    "date_preset":"last_7_days",
+    "data_columns": ["date_start","date_stop","account_name","campaign_group_id","campaign_group_name","campaign_id","campaign_name","adgroup_id","adgroup_name","actions"],
+    "actions_group_by": ["action_type"],
+    "filters": [{"field":"reach","type":"<","value":"1000"}],
+    "time_increment":"1"
+  },
+  "params_basic_metrics":
+  {
+    "date_preset":"last_7_days",
+    "data_columns": ["date_start","date_stop","account_name","campaign_group_id","campaign_group_name","campaign_id","campaign_name","adgroup_id","adgroup_name","reach","frequency","clicks","impressions","spend","actions"],
+    "time_increment":"1"
+  },
+  "params_video_click_metrics":
+  {
+    "date_preset":"last_7_days",
+    "data_columns": ["date_start","date_stop","account_name","campaign_group_id","campaign_group_name","campaign_id","campaign_name","adgroup_id","adgroup_name","actions"],
+    "actions_group_by": ["action_video_type"],
+    "filters": [{"field":"action_type","type":"in","value":["video_view"]}],
+    "time_increment":"1"
+  },
+  "params_video_metrics":
+  {
+    "date_preset":"last_7_days",
+    "data_columns": ["date_start","date_stop","account_name","campaign_group_id","campaign_group_name","campaign_id","campaign_name","adgroup_id","adgroup_name","video_p25_watched_actions","video_p50_watched_actions","video_p75_watched_actions","video_p95_watched_actions","video_p100_watched_actions","video_complete_watched_actions","video_avg_sec_watched_actions","video_avg_pct_watched_actions"],
+    "time_increment":"1"
+  },
+  "account_id":
+  [
+    "act_103186246506396",
+    "act_1375218919412487",
+    "act_1449040405363826",
+    "act_1380667305556275",
+    "act_1449040405363826",
+    "act_996766483690225"
+  ],
+  "S3_path" : "/data-processing/Society/Facebook/",
+  "Files": ["_actions.","_campaign.","_videoclick.","_video."],
+  "Tables": ["daily_facebook_actions","daily_facebook_campaign","daily_facebook_video_clicks","daily_facebook_video"]
+}

@@ -1,0 +1,25 @@
+{
+  "MaxError": 3,
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com","redshift-anom-production.cbyjbvcdzoqz.us-east-1.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["mbau-syd-cadreon","anomaly.com.au"],
+    "s3-path": "/data-collection/RPM/",
+    "s3-source": "kenshoo_data"
+  },
+  "Files": ["raw_conv_kenshoo","raw_perf_kenshoo"],
+  "Tables": ["sem_conv_kenshoo","sem_perf_kenshoo"]
+}

@@ -1,0 +1,52 @@
+{
+  "MaxError": 3,
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "URL": "https://platform.mediamind.com/Eyeblaster.MediaMind.API/",
+  "Version": "V2",
+  "Service":
+  {
+    "advertiser": "/AdvertiserService",
+    "conversion_tag": "/AdvertiserService",
+    "campaign": "/CampaignService",
+    "placement": "/PlacementService",
+    "ad": "/AdService",
+    "performance_report": "/AnalyticsDataService",
+    "conversion_report": "/AnalyticsDataService",
+    "auth": "/AuthenticationService"
+  },
+  "URLTail": ".svc?wsdl",
+  "Credentials":
+  {
+    "username": "cadreonau.api",
+    "password": "sP5541",
+    "appkey": "e7817337-141b-48a3-921d-d1adc234d544"
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com", "redshift-anom-production.cbyjbvcdzoqz.us-east-1.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["mbau-syd-cadreon","anomaly.com.au"],
+    "s3-path": "/data-processing/Sizmek/API/"
+  },
+  "TableStruct":
+  {
+    "mm_api_campaign": {"Columns": ["id","name","accId","accName","advId","start","end","actualStart","bookedImps","stopServ","timeZoneId","addedDate"], "DateFormat": "YYYY-MM-DD", "TimeFormat": "auto"},
+    "mm_api_perf_report": {"Columns": ["adId","plId","pkgId","siteId","camId","advId","delDate","imps","clks","ctr","mmCost","effCost","visImps","invisImps","ttlConvs","pvConvs","pcConvs","addedDate"], "DateFormat": "YYYY-MM-DD", "TimeFormat": "auto"},
+    "mm_api_conv_report": {"Columns": ["adId","plId","pkgId","siteId","camId","advId","convTagId","delDate","ttlConvs","pvConvs","pcConvs","addedDate"], "DateFormat": "YYYY-MM-DD", "TimeFormat": "auto"}
+  },
+  "Objects": ["campaign", "performance_report", "conversion_report"],
+  "Files": ["SizmekApiCampaign","SizmekApiPerformanceReport","SizmekApiConversionReport"],
+  "Tables": ["mm_api_campaign","mm_api_perf_report","mm_api_conv_report"],
+  "Truncate": "TRUNCATECOLUMNS"
+}

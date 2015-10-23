@@ -1,0 +1,46 @@
+{
+  "MaxError": 3,
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["anom-test.cbyjbvcdzoqz.us-east-1.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["anomaly.com.au"]
+  },
+  "Source":
+  {
+    "Host": "ftp.platform.mediamind.com",
+    "User": "Mediabrands",
+    "Password": "rHX8DGqB",
+    "Directory": ["DailyFeed","DailyFeed","StandardAggregatedFeed"]
+  },
+  "TableStruct":
+  {
+    "campaign_delivery": {"Columns": ["data_ts","AdvertiserName","CampaignID","CampaignName","UniqueImpressions","UniqueClickingUsers"], "DateFormat": "auto"},
+    "version_ads": {"Columns": ["data_ts","AdID","AdName","VersionID","VersionClassification"], "DateFormat": "auto"},
+    "cc4s_delivery": {"Columns": ["keywordid","date","clicks","impressions","totalmediacost","avgposition"], "DateFormat": "DD/MM/YYYY HH24:MI:SS"},
+    "cc4s_metadata": {"Columns": ["keywordid","keywordname","adgroupid","adgroupname","campaignid","campaignname","campaignstartdate","campaignenddate","searchengineid","searchenginename","seaccountid","seaccountname","seaccountcurrency","advertiserid","advertisername","accountid","accountname"], "DateFormat": "DD/MM/YYYY HH24:MI:SS"},
+    "conversions": {"Columns": ["entityid","channeltype","date","activitytagid","activitytagname","activitytype","activityoriginalcurrency","postimpimpulseconversions","postimplatentconversions","postclickimpulseconversions","postclicklatentconversions","postimpavglatency","postclickavglatency","postimpconversions","postclickconversions","totalconversionsrate","postimpconversionsrate","postclickconversionsrate","clicktoconversionrate","avgcostperconversion","transactionrevenue","conversiongroup1","conversiongroup2","conversiongroup3","conversiongroup4","conversiongroup5"], "DateFormat": "DD/MM/YYYY HH24:MI:SS"},
+    "custominteractions": {"Columns": ["adid","date","periodid","interactionid","interactionname","interactiontypename","totalcustominteractions","custominteractionsrate","interactionduration","customintavgduration","impressionswithuniquecustominteraction"], "DateFormat": "DD/MM/YYYY HH24:MI:SS"},
+    "delivery": {"Columns": ["adid","date","periodid","impressions","clicks","ctr","totalmediacost","avgcostperclick","adavgduration","impressionswithint","totalinteractions","interactionsrate","intavgduration","impressionswithanyexpansion","avgdwelltime","dwellrate","impressionswithdwell","replays","fullplays","closures","reminderfullplays"], "DateFormat": "DD/MM/YYYY HH24:MI:SS"},
+    "expandables": {"Columns": ["adid","date","periodid","panelid","panelname","totalexpansions","expansionrate","userinitiatedexpansions","userinitiatedrate","impwithspecificexpansion","impwithspecificexpansionrate","expansionavgduration"], "DateFormat": "DD/MM/YYYY HH24:MI:SS"},
+    "metadata": {"Columns": ["adid","adname","adformat","clickthroughurl","sizeinkb","placementid","unitsize","trackingtypename","packageid","costmodel","costperunit","siteid","sitename","campaignid","campaignname","campaignstartdate","campaignenddate","advertiserid","advertisername","accountcurrency","accountid","accountname","adclassification1","adclassification2","adclassification3","adclassification4","adclassification5"],"DateFormat": "DD/MM/YYYY HH24:MI:SS"},
+    "placements": {"Columns": ["placementid","placementname","sectionid","sectionname","startdate","actualstartdate","enddate","rotationtype","packageid","packagename","isrealpackage","orderedimpressions","specialtraffickinginstructions","placementclassification1","placementclassification2","placementclassification3","placementclassification4","placementclassification5"], "DateFormat": "DD/MM/YYYY HH24:MI:SS"},
+    "videos": {"Columns": ["adid","date","periodid","resourceid","videoname","videolength","videostarted","videostartedrate","videoavgduration","video25percent","video50percent","video75percent","videofullplayed","videopaused","videoreplayed","videomuted","videoplayedwithsound","video25rate","video50rate","video75rate","fullplayrate","pausedrate","replayedrate","mutedrate","videoplayedwithsoundrate","fsstarted","fspaused","fsmuted","fsended","fspausedrate","fsmutedrate","fsavgduration"], "DateFormat": "DD/MM/YYYY HH24:MI:SS"}
+  },
+  "Template": [["Campaign_Delivery_%Y%m%d_%Y%m%d.csv", 0, 1],["Version_Ads_%Y%m%d_%Y%m%d.csv", 1, 2],["STDMBAU_%Y%m%d.ZIP", 2, 11]],
+  "Files": ["Campaign_Delivery","Version_Ads","CC4S_Delivery","CC4S_Metadata","Conversions","CustomInteractions","Delivery","Expandables","MetaData","Placements","Videos"],
+  "Tables": ["campaign_delivery","version_ads","cc4s_delivery","cc4s_metadata","conversions","custominteractions","delivery","expandables","metadata","placements","videos"],
+  "Redundant": ["%sServingPeriods.CSV","%sUnique.CSV"]
+}

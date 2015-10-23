@@ -1,0 +1,41 @@
+{
+  "MaxError": 3,
+  "HttpRetry": 5,
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com","redshift-anom-production.cbyjbvcdzoqz.us-east-1.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["mbau-syd-cadreon","anomaly.com.au"],
+    "s3-path": "/data-processing/%s/"
+  },
+  "Files":
+  [
+  "StandardDatafeed_Conversions",
+  "StandardDatafeed_Metrics",
+  "StandardDatafeed_DynamicCreative_conversions",
+  "StandardDatafeed_DynamicCreative_Metrics",
+  "StandardDatafeed_Lookup",
+  "StandardDataFeed_Booked"
+  ],
+  "Tables":
+  [
+  "standarddatafeed_conversions",
+  "standarddatafeed_metrics",
+  "standarddatafeed_dynamiccreative_conversions",
+  "standarddatafeed_dynamiccreative_metrics",
+  "standarddatafeed_lookup",
+  "standarddatafeed_booked"
+  ]
+}

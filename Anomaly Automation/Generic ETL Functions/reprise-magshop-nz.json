@@ -1,0 +1,24 @@
+{
+  "MaxError": 3,
+  "client_secrets": "client_secret_47234910213-anom-com-au-google-analytics.apps.googleusercontent.com.json",
+  "token_file_name": "credentialsGA-anomaly.dat",
+  "api": {"analytics": "v3"},
+  "scope": "https://www.googleapis.com/auth/analytics.readonly",
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "input_params":
+  {
+    "account_list":
+    {
+      "16950947": [{"UA-16950947-1":	["33702753"]}]
+    },
+    "dimensions": ["medium","campaign","source","deviceCategory","landingPagePath","userType"],
+    "metrics": ["sessions","bounces","transactions","transactionRevenue","sessionDuration"],
+    "conversions": ["transactions", "goal%dCompletions"]
+  },
+  "Files": ["Google_Analytics_Core_Metrics_","Google_Analytics_Conversions_"],
+  "Tables": ["daily_metrics","daily_conversions"]
+}

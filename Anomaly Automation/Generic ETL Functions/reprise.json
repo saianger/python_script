@@ -1,0 +1,56 @@
+{
+  "MaxError": 3,
+  "HttpRetry": 5,
+  "client_secrets": "client_secret_47234910213-anom-com-au-google-analytics.apps.googleusercontent.com.json",
+  "token_file_name": "credentialsGA-anomaly.dat",
+  "api": {"analytics": "v3"},
+  "scope": "https://www.googleapis.com/auth/analytics.readonly",
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com","redshift-anom-production.cbyjbvcdzoqz.us-east-1.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["mbau-syd-cadreon","anomaly.com.au"]
+  },
+  "input_params":
+  {
+    "account_list":
+    {
+      "7927216": [{"UA-7927216-1": ["15959289"]}],
+      "10600824": [{"UA-10600824-1": ["21368884","70393546"]}],
+      "5359507": [{"UA-5359507-2": ["10825383"]}],
+      "723192": [{"UA-723192-1": ["1215901"]}],
+      "3917653": [{"UA-3917653-1": ["7806736"]}],
+      "17426000": [{"UA-17426000-1": ["34630023"]}],
+      "18916671": [{"UA-18916671-1": ["37503965"]}],
+      "1356932": [{"UA-1356932-1": ["75221202"]}],
+      "3661340": [{"UA-3661340-10": ["35440717"]}],
+      "7787630": [{"UA-7787630-4": ["79935448","79935862"]}],
+      "7745282": [{"UA-7745282-10": ["39688486"]}],
+      "30927481": [{"UA-30927481-1": ["58729994"]}],
+      "16317197": [{"UA-16317197-9": ["55076511"]}],
+      "15125081": [{"UA-15125081-32":	["101284422"]}],
+      "16950947": [{"UA-16950947-1":	["33702753"]}]
+    },
+    "disabled_account_list":
+    {
+      "XXXXXXXX": [{"UA-XXXXXXXX-X": ["XXXXXXXXXX"]}]
+    },
+    "dimensions": ["medium","channelGrouping","campaign","source","deviceCategory","landingPagePath","userType"],
+    "metrics": ["sessions","bounces","transactions","transactionRevenue","sessionDuration","users","pageviews"],
+    "conversions": ["transactions", "goal%dCompletions"]
+  },
+  "Files": ["Google_Analytics_Core_Metrics_Reprise_","Google_Analytics_Conversions_Reprise_"],
+  "Tables": ["daily_metrics","daily_conversions"]
+}

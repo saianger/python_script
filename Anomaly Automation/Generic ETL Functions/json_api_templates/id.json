@@ -1,0 +1,13 @@
+{
+        "reportScope":{
+            "agencyId":"{{agencyId}}"
+            },
+        "reportType":"advertiser",
+        "columns": [
+            { "columnName": "agencyId" },
+            { "columnName": "advertiserId"}
+         ],
+        "statisticsCurrency": "usd",
+        "verifySingleTimeZone": "false",
+        "includeRemovedEntities": "false"
+}

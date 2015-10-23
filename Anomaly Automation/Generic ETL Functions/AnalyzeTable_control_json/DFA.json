@@ -1,0 +1,16 @@
+{
+        "db_config": {
+                "dbname": "dsaf",
+                "user": "anompublic",
+                "pwd": "Duch+thup*629AY",
+                "host": "mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com",
+                "port": "5439",
+                "schema": "xxlq"
+        },
+        "table_list": {
+                "dfa_ad":[],
+                "dfa_cities":[],
+                "dfa_activity_cat":[],
+                "dfa_activity_type":[]
+        }
+}

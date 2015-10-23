@@ -1,0 +1,39 @@
+{
+  "MaxError": 3,
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com","anom-test.cbyjbvcdzoqz.us-east-1.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["mbau-syd-cadreon","anomaly.com.au"],
+    "s3-path": "/data-collection/MediaMind-download/./{1}/",
+    "s3-source": "data-collection/MediaMind-download/./{0}"
+  },
+  "Source":
+  {
+    "Host": "ftp.platform.mediamind.com",
+    "User": "Mediabrands",
+    "Password": "rHX8DGqB",
+    "Directory": "/"
+  },
+  "Local": "/mnt/data/data-collection/{0}",
+  "Files":
+  [
+    {"MM_CLD_Standard": "standard_logs"},
+    {"MM_CLD_Rich": "rich_logs"},
+    {"MM_CLD_Conversion": "conversion_logs"},
+    {"MM_CLD_Match": "lookup_tables"}
+  ],
+  "Template": "*{0}_Daily_%y%m%d.*zip"
+}

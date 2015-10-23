@@ -1,0 +1,28 @@
+{
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["mbau-syd-cadreon"]
+  },
+  "Credentials": [{"Email":["anom.com.au","next"]}, {"Passwd":["Dailyanom","signIn"]}],
+  "GWT_url": "https://www.google.com/webmasters/tools",
+  "Basedir": "/mnt/data/data-collection/Reprise/GWT/",
+  "Logfile": "GWT_SCRAPE",
+  "FileStruct":
+  {
+    "urls-page": ["Client","Date","Page","Impressions","Clicks","CTR","Avg. position"],
+    "queries-search": ["Client","Date","Query","Impressions","Clicks","CTR","Avg. position"],
+    "queries-chart": ["Client","Date","Impressions","Clicks"],
+    "page_queries": ["Client","Date","Page","Query","Impressions","Clicks"]
+  },
+  "SkipClients": ["http://www.magshop.co.nz"],
+  "Truncate": "TRUNCATECOLUMNS"
+}

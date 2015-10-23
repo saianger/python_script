@@ -1,0 +1,36 @@
+{
+  "MaxError": 3,
+  "client_secrets": "client_secret_47234910213-anom-com-au-google-analytics.apps.googleusercontent.com.json",
+  "token_file_name": "credentialsGA-anomaly.dat",
+  "api": {"analytics": "v3"},
+  "scope": "https://www.googleapis.com/auth/analytics.readonly",
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": "mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com",
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": "mbau-syd-cadreon"
+  },
+  "input_params":
+  {
+    "account_list":
+    {
+    },
+    "dimensions": ["medium","campaign","date","source","deviceCategory"],
+    "metrics": ["sessions","bounces","transactions","transactionRevenue"],
+    "conversions": ["transactions", "goal%dCompletions"]
+  },
+  "Files": ["Google_Analytics_Core_Metrics_","Google_Analytics_Conversions_"],
+  "Tables": ["daily_metrics","daily_conversions"]
+}

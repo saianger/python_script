@@ -1,0 +1,80 @@
+{
+  "MaxError": 3,
+  "HttpRetry": 5,
+  "client_secrets": "client_secret_47234910213-anom-com-au-google-analytics.apps.googleusercontent.com.json",
+  "token_file_name": "credentialsGA-anomaly.dat",
+  "api": {"analytics": "v3"},
+  "scope": "https://www.googleapis.com/auth/analytics.readonly",
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com","redshift-anom-production.cbyjbvcdzoqz.us-east-1.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["mbau-syd-cadreon","anomaly.com.au"]
+  },
+  "input_params":
+  {
+    "account_list":
+    {
+      "21714601":
+      [
+        {
+          "UA-21714601-2": ["42893606"],
+          "UA-21714601-3": ["42892196"],
+          "UA-21714601-4": ["42893477"],
+          "UA-21714601-9": ["42943194"],
+          "UA-21714601-15": ["42944185"],
+          "UA-21714601-17": ["42944196"],
+          "UA-21714601-19": ["42945047"],
+          "UA-21714601-20": ["42945725"],
+          "UA-21714601-23": ["42945555"],
+          "UA-21714601-26": ["42945078"],
+          "UA-21714601-28": ["42946512"],
+          "UA-21714601-29": ["42946700"],
+          "UA-21714601-33": ["42945972"],
+          "UA-21714601-45": ["48795025"],
+          "UA-21714601-50": ["50936157"],
+          "UA-21714601-51": ["52772075"],
+          "UA-21714601-52": ["52872908"],
+          "UA-21714601-53": ["53097486"],
+          "UA-21714601-54": ["53106213"],
+          "UA-21714601-58": ["59160429"],
+          "UA-21714601-67": ["64186384"],
+          "UA-21714601-71": ["66256045"],
+          "UA-21714601-73": ["66249176"],
+          "UA-21714601-74": ["66344078"],
+          "UA-21714601-76": ["66375601"],
+          "UA-21714601-77": ["66484067"],
+          "UA-21714601-79": ["69756582"],
+          "UA-21714601-80": ["70666400"],
+          "UA-21714601-87": ["75370630"],
+          "UA-21714601-88": ["78347719"],
+          "UA-21714601-89": ["80046514"],
+          "UA-21714601-90": ["81502538"],
+          "UA-21714601-91": ["81502344"],
+          "UA-21714601-92": ["82611478"],
+          "UA-21714601-93": ["83378222"],
+          "UA-21714601-94": ["87264260"],
+          "UA-21714601-95": ["92699644"],
+          "UA-21714601-96": ["92697180"],
+          "UA-21714601-97": ["92700939"]
+        }
+      ]
+    },
+    "dimensions": ["country","city","campaign","channelGrouping","source","deviceCategory","userType"],
+    "metrics": ["users","sessions","bounces","sessionDuration"]
+    },
+  "Files": ["Google_Analytics_Core_Metrics_Sony_"],
+  "Tables": ["sony_ga_daily_metrics"]
+}

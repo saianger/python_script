@@ -1,0 +1,57 @@
+{
+  "MaxError": 3,
+  "HttpRetry": 5,
+  "Gupta" :
+  {
+    "Protocol": "https",
+    "ID": "131271274",
+    "Token": "h9u4RgBJQFUemYpxMaaV6i1mENmqBt9U",
+    "Host": "reports-api.guptamedia.com",
+    "requestURL": ["/v1/campaignSummaries","/v1/campaignPerformance"]
+  },
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com","redshift-anom-production.cbyjbvcdzoqz.us-east-1.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["mbau-syd-cadreon","anomaly.com.au"],
+    "s3-path": "/ETL/data-processing/Sony/Gupta/"
+  },
+  "Files": ["campaignSummaries","campaignPerformance"],
+  "Tables": ["sony_gupta_summary","sony_gupta_performance"],
+  "Columns":
+  {
+    "campaignSummaries":
+    [
+      ["start","start_date"],
+      ["end","end_date"],
+      ["id","campaign_id"],
+      ["name","campaign_name"],
+      ["artist","artist"],
+      ["clicks","click"],
+      ["impressions","impression"],
+      ["cost","spend"]
+    ],
+    "campaignPerformance":
+    [
+      ["day","ddate"],
+      ["campaignId","campaign_id"],
+      ["platform","platform"],
+      ["clicks","click"],
+      ["impressions","impression"],
+      ["cost","spend"]
+    ]
+  },
+  "BlankArtists": ["Guy Sebastian","The Veronicas","One Direction"]
+}

@@ -1,0 +1,37 @@
+{
+  "MaxError": 3,
+  "Monitoring":
+  {
+    "Requests": {"Schema": "anom_monitoring.","Table": "ga_requests","Columns": ["start_dtm","end_dtm","job_name","schema_name","request_count"]},
+    "Data": {"Schema": "anom_monitoring.","Table": "data_io","Columns": ["start_dtm","end_dtm","job_name","schema_name","volume_in_bytes","source","destination","records_in", "records_out"]}
+  },
+  "Redshift":
+  {
+    "dbname": "dsaf",
+    "host": ["mbau-ausanom-redshift.c3nkjwrx2zc4.ap-southeast-2.redshift.amazonaws.com","redshift-anom-production.cbyjbvcdzoqz.us-east-1.redshift.amazonaws.com"],
+    "port": 5439,
+    "user": "anompublic",
+    "pass": "Duch+thup*629AY"
+  },
+  "s3":
+  {
+    "s3cfg": ".s3cfg",
+    "s3-bucket": ["mbau-syd-cadreon","anomaly.com.au"]
+  },
+  "Source":
+  {
+    "Host": "sftp-anom-production",
+    "User": "sony",
+    "Password": "",
+    "Directory": "/files",
+    "SSH_Path": "/var/lib/jenkins/.ssh/id_rsa"
+  },
+  "Columns":
+  {
+    "sme_phys_sales": ["Date","retailer","SME Product ID","artist","title","product type","qty","wholesale value","post code"],
+    "sme_itunes_sales": ["date","DSP","SME product ID","artist","product title","product type","qty sold","wholesale value","retail value","territory","Apple product id","customer id","order id","post code"],
+    "sme_spotify_sales": ["date","DSP","SME product ID","artist","title","product type","qty","consumer country","post code","consumer gender","consumer birth year","consumer account type"]
+  },
+  "Files": ["sme_phys_sales","sme_itunes_sales","sme_spotify_sales"],
+  "Tables": ["sony_sales_physical","sony_sales_itunes","sony_sales_spotify"]
+}
